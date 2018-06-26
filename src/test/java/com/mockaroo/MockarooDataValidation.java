@@ -72,20 +72,21 @@ public class MockarooDataValidation {
 
 		@Test(priority=3)
 		public void downloadAndData() throws Exception {
-			// click to download
+			// click to download button
 			driver.findElement(By.id("download")).click(); 
 			// Open the downloaded file
 			String filename = "C:\\Users\\darin\\Downloads\\MOCK_DATA.csv";
 			
 			BufferedReader reader = new BufferedReader(new FileReader(filename));
 			reader.read();
+			// store the the expected fields 
 			Set<String> rows = new HashSet<>();
 			rows.add("City");
 			rows.add("Country");
 			
 			
 		}
-		@Test
+		@Test // read the value from a cell in Excel 
 		public static String getcellValue(int testRowNo, int colNo)
 	    {
 	        String projectPath = System.getProperty("user.dir");
@@ -123,6 +124,8 @@ public class MockarooDataValidation {
 	        }
 	        return cellValue;
 	    }
+		// store the Excel data into List
+		
 //			List<String> records = new ArrayList<String>();
 //			  try
 //			  {
@@ -143,10 +146,6 @@ public class MockarooDataValidation {
 //			  System.out.println(records);
 		
 		
-		@Test
-		public void data() {
-			String rowName = "";
-		}
 	
 		
 		@AfterClass
